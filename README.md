@@ -1,7 +1,10 @@
-# Remote-Sensing-Image-Super-Resolution
+# Remote Sensing Image Super-Resolution: Papers, Datasets & Benchmarks
 
-Here I mainly list the deep learning-based remote sensing image super-resolution methods. 
+A curated reference for deep-learning-based **remote sensing image super-resolution (RSISR)**: papers with code, datasets, benchmarks and evaluation notes.
 
+> **Credits and scope.** The original list in *Survey* and *Papers & Codes* (entries **[1]-[109]**, 2017-2025) was compiled by **Sen Lei** and is reproduced here as a base, unchanged, with full credit to its author (see [Credits](#credits)). This repository extends it with entries **[110]+** (2024-2026 papers), a **Datasets** section, and **Evaluation notes**, compiled by [J. Estevez](https://github.com/EstevezCodando). Additions were checked against arXiv and the dataset pages on **2026-09-30**.
+
+**Contents:** [Survey](#survey) | [Papers & Codes](#paperscodes) | [New papers 2025-2026](#new-papers-2025-2026) | [Methods at a glance](#methods-at-a-glance) | [Recommended starting points](#recommended-starting-points) | [Tools and libraries](#tools-and-libraries) | [Datasets](#datasets) | [Evaluation notes](#evaluation-notes) | [Credits](#credits)
 
 ## Survey
 
@@ -129,9 +132,144 @@ Here I mainly list the deep learning-based remote sensing image super-resolution
 | [108]  |2025 | Wiener Filter-Based Mamba for Remote Sensing Image Super-Resolution with Novel Degradation | - | [IEEE JSTARS](https://ieeexplore.ieee.org/abstract/document/11202325) | - |
 | [109]  |2025 | DISR: A New Dual-Domain Implicit Super-Resolution Method for Remotely Sensed Imagery | - | [IEEE TGRS](https://ieeexplore.ieee.org/abstract/document/11215804) | [code](https://github.com/Liuyx-max/DISR)![GitHub stars](http://img.shields.io/github/stars/Liuyx-max/DISR.svg?logo=github&label=Stars) |
 
-## Citation
-If you find this repository helpful in your research, please kindly consider citing our works on this topic, such as LGCNet, HSENet, TranSENet, CDGAN, FunSR, and SpecGAN.
+## New papers 2025-2026
 
-For more questions and suggestions, feel free to contact me :)
+Continuation of the table above (same columns). Entries [110]-[131] were collected from arXiv on 2026-09-30, prioritising optical and multispectral RSISR, Sentinel-2 and cross-sensor work, diffusion and flow-matching models, and efficiency. Hyperspectral/spectral and infrared work appears under Datasets when a benchmark is involved.
 
-Email: senlei@swjtu.edu.cn, senlei@buaa.edu.cn
+| ID | Year  | Title                  | Model                  | Published | Code |
+| -- | ----- |----------------------- | ---------------------- | --------- | ---- |
+| [110]  | 2024 | Enhancing Sentinel-2 Image Resolution: Evaluating Advanced Techniques based on Convolutional and Generative Neural Networks | - | [arXiv](https://arxiv.org/abs/2410.00516) | - |
+| [111]  | 2025 | Beyond Pretty Pictures: Combined Single- and Multi-image Super-resolution for Sentinel-2 Images | - | [arXiv](https://arxiv.org/abs/2505.24799) | - |
+| [112]  | 2025 | DiffFuSR: Super-Resolution of all Sentinel-2 Multispectral Bands using Diffusion Models | DiffFuSR | [arXiv](https://arxiv.org/abs/2506.11764) | - |
+| [113]  | 2025 | Semantic-Guided Cross-Sensor Super Resolution of Remote Sensing Images: A Gated Dual Conditioning Flow Matching Model | RareFlow | [arXiv](https://arxiv.org/abs/2510.23816) | - |
+| [114]  | 2025 | Trustworthy Super-Resolution of Multispectral Sentinel-2 Imagery with Latent Diffusion | LDSR-S2 | [IEEE JSTARS](https://www.semanticscholar.org/paper/Trustworthy-Super-Resolution-of-Multispectral-With-Donike-Aybar/27fa48af71d55c671c498649b5a65d57fbed13f4) | [code](https://github.com/ESAOpenSR/opensr-model) |
+| [115]  | 2025 | OpenSR-SRGAN: A Flexible Super-Resolution Framework for Multispectral Earth Observation Data | OpenSR-SRGAN | [arXiv](https://arxiv.org/abs/2511.10461) | - |
+| [116]  | 2025 | Segmentation-Aware Latent Diffusion for Satellite Image Super-Resolution | - | [arXiv](https://arxiv.org/abs/2511.14481) | - |
+| [117]  | 2025 | History-Augmented Contrastive Learning With Soft Mixture of Experts for Blind Super-Resolution of Planetary Remote Sensing Images | - | [arXiv](https://arxiv.org/abs/2511.20045) | - |
+| [118]  | 2025 | HIMOSA: Efficient Remote Sensing Image Super-Resolution with Hierarchical Mixture of Sparse Attention | HIMOSA | [arXiv](https://arxiv.org/abs/2512.00275) | - |
+| [119]  | 2025 | SuperF: Neural Implicit Fields for Multi-Image Super-Resolution | SuperF | [arXiv](https://arxiv.org/abs/2512.09115) | - |
+| [120]  | 2025 | SERA-H: Super-Resolution of Sentinel Time Series for Fine-Scale Canopy Height Mapping | SERA-H | [arXiv](https://arxiv.org/abs/2512.18128) | - |
+| [121]  | 2026 | VibrantSR: Sub-Meter Canopy Height Models from Sentinel-2 Using Generative Flow Matching | VibrantSR | [arXiv](https://arxiv.org/abs/2601.09866) | - |
+| [122]  | 2026 | InfScene-SR: Seamless Super-Resolution of Arbitrarily Large Remote-Sensing Scenes via Variance-Preserving Joint Denoising | InfScene-SR | [arXiv](https://arxiv.org/abs/2602.19736) | [code](https://github.com/TitorX/infscene-sr) |
+| [123]  | 2026 | Self-Supervised Uncertainty Estimation For Super-Resolution of Satellite Images | - | [arXiv](https://arxiv.org/abs/2603.14074) | - |
+| [124]  | 2026 | Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework | TexAdiff | [arXiv](https://arxiv.org/abs/2604.13994) | [code](https://github.com/ZezFuture/TexAdiff) |
+| [125]  | 2026 | Flow matching for Sentinel-2 super-resolution: implementation, application, and implications | - | [arXiv](https://arxiv.org/abs/2605.00367) | - |
+| [126]  | 2026 | SlimDiffSR: Toward Lightweight and Efficient Remote Sensing Image Super-Resolution via Diffusion Model Distillation | SlimDiffSR | [arXiv](https://arxiv.org/abs/2605.02198) | [code](https://github.com/wwangcece/SlimDiffSR) |
+| [127]  | 2026 | Spatial-Frequency Gated Swin Transformer for Cross-Sensor Remote Sensing Super-Resolution | SFG-SwinSR | [arXiv](https://arxiv.org/abs/2605.09687) | [code](https://github.com/aminurhossain/SFG-SwinSR) |
+| [128]  | 2026 | Learning to Balance: Decoupled Siamese Diffusion Transformer for Reference-Based Remote Sensing Image Super-Resolution | - | [arXiv](https://arxiv.org/abs/2605.17980) | - |
+| [129]  | 2026 | Flow-based Gaussian Splatting for Continuous-Scale Remote Sensing Image Super-Resolution | - | [arXiv](https://arxiv.org/abs/2605.22147) | - |
+| [130]  | 2026 | NGram-MoSE: Efficient Remote Sensing Super-Resolution via N-Gram Context and Mixture-of-Experts | NGram-MoSE | [arXiv](https://arxiv.org/abs/2606.08535) | - |
+| [131]  | 2026 | Mind the Gap: Quantifying the Domain Gap in Cross-Sensor Diffusion Super-Resolution | - | [arXiv](https://arxiv.org/abs/2606.28039) | - |
+
+## Methods at a glance
+
+Families of methods that appear in the tables above, with representative entries by ID. A paper can belong to several families.
+
+| Family | Main idea | Representative entries |
+| ------ | --------- | ---------------------- |
+| CNN baselines | Residual / recursive / multi-scale convolutional networks | [1] LGCNet, [4] DDRN, [8] HSENet |
+| GAN-based | Adversarial training for sharper texture; attention, spectral or Swin variants | [10] RRSGAN, [20] SpecGAN, [31] SWCGAN, [115] OpenSR-SRGAN |
+| Transformer-based | Window / token-selective attention for long-range context | [18] TransENet, [49] TTST, [61] ESTNet |
+| Implicit / continuous-scale | Arbitrary scale factors through implicit functions or other continuous representations | [15] RSI-HFAS, [34] SADN, [35] FunSR, [129] Gaussian-splatting SR |
+| Diffusion | Iterative denoising; latent-space variants to cut cost | [55] EDiffSR, [58] SGDM, [114] LDSR-S2, [112] DiffFuSR |
+| Flow matching | Faster generative sampling than classic diffusion | [103] semantic-guided flow matching, [113] RareFlow, [125] Sentinel-2 flow matching |
+| State-space (Mamba) | Linear-complexity sequence modelling for large images | [66] FMSR, [87] EMAN, [90] Rep-Mamba |
+| Reference-based | Uses an extra high-resolution reference image | [10] RRSGAN, [56] RefDiff, [128] decoupled Siamese diffusion transformer |
+| Blind / real-world | Unknown or complex degradation instead of bicubic downsampling | [19] kernel-aware network, [26] MDRGBSR, [43] DRSR |
+| Multi-image / multi-frame | Fuses several acquisitions of the same scene | [76] HyDA-Net, [119] SuperF, plus WorldStrat, MuS2 and PROBA-V datasets |
+| Semantic / vision-language guidance | Land-cover or language priors steer reconstruction | [84] SeG-SR, [102] VLM-guided diffusion, [106] land-cover prior diffusion, [116] segmentation-aware latent diffusion |
+| Lightweight and distillation | Smaller models, binary networks, diffusion distillation | [21] FeNet, [32] SalDRN, [67] BLiSR, [126] SlimDiffSR |
+| Mixture of experts | Routes regions or patches to specialised sub-networks | [74] heterogeneous MoE, [118] HIMOSA, [130] NGram-MoSE |
+| Uncertainty and trust | Reports where the output is unreliable | [114] LDSR-S2 (pixel-wise uncertainty), [123] self-supervised uncertainty estimation |
+
+**Common pattern in 2025-2026 work:** latent diffusion or flow matching conditioned on the low-res input (and often on semantics), trained on real cross-sensor pairs (SEN2NAIP, WorldStrat, SEN2VENµS), evaluated with downstream-aware metrics, with attention to speed (few-step sampling, distillation) and to hallucination (uncertainty maps).
+
+## Recommended starting points
+
+Editorial picks by J. Estevez, chosen for code availability, evaluation on real sensors, recency and how well they represent a family. They are not a ranking of accuracy: results across papers are not directly comparable because datasets, scale factors and degradation models differ.
+
+| If you want to... | Start with |
+| ----------------- | ---------- |
+| Get the landscape | Surveys 2025 (ISPRS) and 2022 (Earth-Science Reviews), listed under *Survey* |
+| Reproduce a solid CNN / Transformer baseline with code | [8] HSENet, [18] TransENet, [21] FeNet |
+| Try continuous-scale SR | [35] FunSR, [34] SADN |
+| Use diffusion with public code | [55] EDiffSR, [58] SGDM, [114] LDSR-S2 (`pip install opensr-model`) |
+| Super-resolve Sentinel-2 in practice | [114] LDSR-S2 (with uncertainty map), [112] DiffFuSR (all 12 bands to 2.5 m), Satlas S2-NAIP models |
+| Compare fairly on real data | opensr-test and GeoSR-Bench (see *Datasets* and *Tools and libraries*) |
+| Keep cost low | [126] SlimDiffSR, [122] InfScene-SR (large scenes), [21] FeNet |
+
+## Tools and libraries
+
+All entries were checked on their official repositories on 2026-09-30. "Not declared" means the repository has no license stated in its README; check before reuse.
+
+### Remote-sensing specific
+
+| Tool | What it does | License | Link |
+| ---- | ------------ | ------- | ---- |
+| **opensr-model** (LDSR-S2) | Latent diffusion SR for Sentinel-2 RGB-NIR, 128x128 to 512x512, returns an uncertainty map; `pip install opensr-model` | see repo | [GitHub](https://github.com/ESAOpenSR/opensr-model) |
+| **opensr-test** | Benchmark for real Sentinel-2 SR; measures consistency, spectral signature, spatial alignment, synthesis, hallucination and omission; `pip install opensr-test` | MIT | [GitHub](https://github.com/ESAOpenSR/opensr-test) |
+| **OpenSR-SRGAN** | Configurable GAN framework (SRResNet, RCAB, RRDB, LKA, ESRGAN, stochastic generators), YAML-driven, PyTorch Lightning; `pip install opensr-srgan` | Apache-2.0 | [GitHub](https://github.com/ESAOpenSR/SRGAN) |
+| **Satlas super-resolution** | S2-NAIP training sets (about 1.1M urban pairs and about 44M full pairs) and ESRGAN / SRCNN / HighResNet weights; 4x on Sentinel-2 time series | Apache-2.0 | [GitHub](https://github.com/allenai/satlas-super-resolution) |
+| **SR4RS** | Open-source SR tool for remote sensing with pretrained models | MIT | [GitHub](https://github.com/remicres/sr4rs) |
+| **TorchGeo** | PyTorch library with geospatial datasets, samplers, transforms and pretrained multispectral weights | MIT | [GitHub](https://github.com/microsoft/torchgeo) |
+| **EDiffSR** | Code for the TGRS 2024 diffusion model; trained on AID, tested on DOTA, DIOR and NWPU-RESISC45 | not declared | [GitHub](https://github.com/XY-boy/EDiffSR) |
+| **SGDM** | Code for semantic-guided large-factor SR with a generative diffusion prior | not declared | [GitHub](https://github.com/wwangcece/SGDM) |
+
+### General-purpose SR toolboxes (commonly adapted to remote sensing)
+
+| Tool | What it does | License | Link |
+| ---- | ------------ | ------- | ---- |
+| **BasicSR** | PyTorch restoration toolbox: EDSR, RCAN, SRGAN, ESRGAN, SwinIR, EDVR, BasicVSR and others | Apache-2.0 | [GitHub](https://github.com/XPixelGroup/BasicSR) |
+| **Real-ESRGAN** | Practical blind restoration trained on purely synthetic degradations | BSD-3-Clause | [GitHub](https://github.com/xinntao/Real-ESRGAN) |
+| **SwinIR** | Swin-Transformer restoration: classic, lightweight and real-world SR at 2x/3x/4x/8x | Apache-2.0 | [GitHub](https://github.com/JingyunLiang/SwinIR) |
+| **MMagic** | OpenMMLab toolkit with SRCNN, SRGAN, EDSR, ESRGAN, RDN, GLEAN, LIIF, Real-ESRGAN and video SR models (last release v1.2.0, Dec 2023) | Apache-2.0 | [GitHub](https://github.com/open-mmlab/mmagic) |
+
+## Datasets
+
+Paired or multi-image data for training and evaluating RSISR. Real pairs come from two sensors (cross-sensor); synthetic pairs are degraded from a high-resolution image, which can hide the domain gap between training and real-world inputs.
+
+### Sentinel-2 and cross-sensor
+
+| Dataset | Pairs / content | Link |
+| ------- | --------------- | ---- |
+| **SEN2VENµS** | Sentinel-2 10/20 m patches with same-day VENµS references at 5 m; 29 locations, 132,955 patches of 256x256 px | [Zenodo](https://zenodo.org/records/6514159) / [Hugging Face](https://huggingface.co/datasets/tacofoundation/sen2venus) |
+| **WorldStrat** | SPOT 6/7 imagery (1.5 m) paired with Sentinel-2 time series, about 10,000 km2, for multi-frame SR | [arXiv](https://arxiv.org/abs/2207.06418) / [Zenodo](https://zenodo.org/record/6810791) |
+| **SEN2NAIP** | 2,851 cross-sensor pairs (Sentinel-2 L2A and NAIP, 0.6 m) plus 17,657 synthetic NAIP/S2-like pairs | [Hugging Face](https://huggingface.co/datasets/isp-uv-es/SEN2NAIP) |
+| **OpenSR / opensr-test** | Test benchmark with three datasets built to minimise spatial and spectral misalignment; metrics for consistency, synthesis and correctness | [Hugging Face](https://huggingface.co/datasets/isp-uv-es/opensr-test) / [ESA OpenSR](https://isp.uv.es/pages/opensr/data.html) |
+| **MuS2** | Real Sentinel-2 multi-image sets paired with WorldView-2 | [arXiv](https://arxiv.org/abs/2210.02745) |
+| **Sentinel-2 / Sentinel-3 paired** | Time series at 10 m and 300 m over 40 regions of interest | [Zenodo](https://zenodo.org/records/19049675) |
+| **Sentinel-2 + NAIP (CONUS)** | 120,851 pairs, Sentinel-2 10 m and NAIP 2.5 m (introduced with the flow-matching paper) | [arXiv](https://arxiv.org/abs/2605.00367) |
+| **PROBA-V SR challenge** | 1,450 scenes (1,160 train / 290 test), 300 m low-res series and 100 m targets, at least 9 frames per scene | [ESA Kelvins](https://kelvins.esa.int/proba-v-super-resolution/) |
+
+### Benchmarks and other modalities
+
+| Dataset | Content | Link |
+| ------- | ------- | ---- |
+| **GeoSR-Bench** | About 36,000 locations, resolutions from 500 m to 0.6 m, evaluating SR through downstream tasks | [arXiv](https://arxiv.org/abs/2605.00310) |
+| **RSSOD** | Super-resolution combined with small-object detection in high-resolution imagery | [arXiv](https://arxiv.org/abs/2111.03260) |
+| **SyMTRS** | Synthetic aerial RGB 2048x2048 with depth maps and 2x/4x/8x variants; multi-task (depth, domain adaptation, SR) | [arXiv](https://arxiv.org/abs/2604.21801) / [GitHub](https://github.com/safouaneelg/SyMTRS) |
+| **IR275K** | Infrared multi-frame SR: 594 video sequences, 275,196 frames | [arXiv](https://arxiv.org/abs/2607.22380) / [GitHub](https://github.com/InfraRecon7/IR275K) |
+| **NTIRE 2026 infrared RS challenge** | First challenge on remote sensing infrared image SR | [arXiv](https://arxiv.org/abs/2604.21312) / [GitHub](https://github.com/Kai-Liu001/NTIRE2026_infraredSR) |
+| **Scene datasets reused for SR** | UC Merced (2,100 images, 256x256, 0.3 m), AID (10,000 images, 30 classes), NWPU-RESISC45 (31,500 images, 45 classes): classification datasets often downsampled to evaluate SR | see each dataset's official page |
+
+### Dataset surveys and catalogues
+
+- [A Comprehensive Survey of Super-Resolution Remote Sensing Image Datasets: Evolution, Challenges, and Future Directions](https://www.researchgate.net/publication/394548668_A_Comprehensive_Survey_of_Super-Resolution_Remote_Sensing_Image_Datasets_Evolution_Challenges_and_Future_Directions)
+- [There Are No Data Like More Data: Datasets for Deep Learning in Earth Observation](https://arxiv.org/abs/2310.19231)
+- [satellite-image-deep-learning/datasets](https://github.com/satellite-image-deep-learning/datasets): general catalogue of satellite and aerial imagery datasets.
+
+## Evaluation notes
+
+Observations drawn from the papers and benchmarks listed above:
+
+- **Pixel metrics are not enough.** GeoSR-Bench evaluates SR through downstream tasks rather than only fidelity metrics; opensr-test separates *consistency* (agreement with the low-res input), *synthesis* (perceived detail) and *correctness* (agreement with the reference).
+- **Synthetic vs real degradation.** Models trained on synthetic low-res inputs can degrade on real cross-sensor data; the "Mind the Gap" paper studies this for diffusion models, and SEN2NAIP, SEN2VENµS and WorldStrat provide real pairs.
+- **Hallucination and uncertainty.** Generative SR (diffusion, GAN, flow matching) can invent plausible detail. LDSR-S2 provides a pixel-wise uncertainty map, and a 2026 paper proposes self-supervised uncertainty estimation for satellite SR.
+- **Efficiency and scale.** Recent work targets large scenes and deployment cost: InfScene-SR (arbitrarily large scenes), SlimDiffSR (diffusion distillation), HIMOSA and NGram-MoSE (efficient architectures).
+- **Trend.** Diffusion and flow-matching models, Mamba/state-space models, reference-based and cross-sensor SR, and vision-language guidance are the most active directions in 2025-2026.
+
+## Credits
+
+- The original list (*Survey* and *Papers & Codes*, entries [1]-[109]) was compiled by **Sen Lei**, who is also an author of LGCNet, HSENet, TransENet, CDGAN, FunSR and SpecGAN. The original README asks that people who find it helpful consider citing those works, and lists these contacts: senlei@swjtu.edu.cn, senlei@buaa.edu.cn. No license was declared in the original; it is reproduced here as a base, with attribution.
+- Entries [110]+, the Datasets section and the Evaluation notes were added by J. Estevez. Each title, link and dataset figure comes from the arXiv record or dataset page cited in the same row.
+- Corrections and additions are welcome through issues and pull requests. If you are an author and want an entry changed or removed, please open an issue.
